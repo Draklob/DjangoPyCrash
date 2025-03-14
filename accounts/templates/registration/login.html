@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends "django_py_crash/base.html" %}
+
+{% block content %}
+{% if forms.errors %}
+  <p>Your username and password didn´t match. Please try again.</p>
+{% endif %}
+
+<form action="{% url 'accounts:login': %}"
+{% endblock content %}
+</body>
+</html>

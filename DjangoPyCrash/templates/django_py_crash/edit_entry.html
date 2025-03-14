@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends "django_py_crash/base.html" %}
+
+{% block content %}
+<p><a href="{% url 'django_py_crash:topic' topic.id %}">{{ topic }}</a> </p>
+
+<p>Edit entry:</p>
+
+<form action="{% url 'django_py_crash:edit_entry' entry.id %}" method="post">
+  {% csrf_token %}
+  {{ form.as_div }}
+  <button name="submit">Save changes</button>
+</form>
+{% endblock content %}
+
+</body>
+</html>

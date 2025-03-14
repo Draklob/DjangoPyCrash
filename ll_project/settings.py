@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # My Apps
     'DjangoPyCrash',
+    'accounts',
     # Default django apps
     'django.contrib.admin',
     'django.contrib.auth',
