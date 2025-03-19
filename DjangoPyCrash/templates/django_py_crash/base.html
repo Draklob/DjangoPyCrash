@@ -1,6 +1,18 @@
 <p>
     <a href="{% url 'django_py_crash:index' %}">Learning Log</a>
     <a href="{% url 'django_py_crash:topics' %}">Topics</a>
+
+    {% if user.is_authenticated %}
+        <hr />
+        <form action="{% url 'accounts:logout' %}" method='post'>
+            {% csrf_token %}
+            <button name='submit'>Log out</button>
+        </form>
+        Helo, {{ user.username }}.
+    {% else %}
+        <a href="{% url 'accounts:register' %}">Register</a>
+        <a href="{% url 'accounts:login' %}">Log in</a>
+    {% endif %}
 </p>
 
 {% block content %}{% endblock content%}

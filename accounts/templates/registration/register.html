@@ -8,14 +8,12 @@
 {% extends "django_py_crash/base.html" %}
 
 {% block content %}
-{% if forms.errors %}
-  <p>Your username and password didn´t match. Please try again.</p>
-{% endif %}
-
-<form action="{% url 'accounts:login' %}" method="post">
+  <form action="{% url 'accounts:register' %}" method="post">
     {% csrf_token %}
     {{ form.as_div }}
-</form>
+
+    <button name="submit">Register</button>
+  </form>
 {% endblock content %}
 </body>
 </html>
